@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Xinyue Feng at NJU</title>
+		<title>Xinyue Feng at Rutgers</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="shortcut icon" href="images/nju.jpeg">
@@ -24,8 +24,8 @@
 				<ul>
 					<li><a href="#wrapper" style="text-decoration: none;">Biography</a></li>
 					<li><a href="#publications" style="text-decoration: none;">Publications</a></li>
-					<!--<li><a href="#experiences" style="text-decoration: none;">Experiences</a></li>
-					<li><a href="#services" style="text-decoration: none;">Academic Services</a></li>-->
+					<li><a href="#projects" style="text-decoration: none;">Projects</a></li>
+					<!-- <li><a href="#services" style="text-decoration: none;">Academic Services</a></li> -->
 					<li><a href="#awards" style="text-decoration: none;">Awards & Honors</a></li>
 					<!--<li><a href="#teaching" style="text-decoration: none;">Teaching Assistant</a></li>-->
 					<li><a href="#miscellaneous" style="text-decoration: none;">Miscellaneous</a></li>
@@ -44,13 +44,13 @@
 								</a>
 							</span>
 							<br>
-							M.S. of Statistics
+							Ph.D. of Computer Science
 					        <h4>
-					          	<a href="https://www.nju.edu.cn/EN/" target="_blank">Nanjing University (NJU)</a>
+					          	Rutgers University
 					        </h4>
 							<ul class="social">
 								<center>
-									<li><a id="email" href="fengxy26@gmail.com" class="icon solid fa-envelope" title="Email"></a></li>
+									<li><a id="email" href="mailto:fengxy26@gmail.com" class="icon solid fa-envelope" title="Email"></a></li>
 									<li><a href="https://www.linkedin.com/in/xinyue-feng-5369a3142/" target="_blank" class="icon brands fa-linkedin-in" title="LinkedIn"></a></li>
 									<!--<li><a href="https://github.com/fengxyStar" target="_blank" class="icon brands fa-github" title="Github"></a></li>-->
 									<!--<li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=hRDUMnQAAAAJ" target="_blank" class="icon solid fa-graduation-cap" title="Google Scholar"></a></li>-->
@@ -213,7 +213,7 @@
 		</article> 
 
 				<!--专利Patents https://jinbo-bi.uconn.edu/#. PhD Thesis:-->
-		<article id="experiences" class="wrapper style3">
+		<article id="projects" class="wrapper style3">
 			<div class="container medium">
 				<header><h2>Projects</h2></header>
 				<ul>
@@ -222,9 +222,62 @@
 						<br><br>
 					</li>
 					<li>
-						Apr. 2022 -- Nov. 2023. <b>Research Intern</b> in <a href="https://www.jingdonglogistics.com" target="_blank">JD Logistics</a> <br>
-						<br><br>
+					  Apr. 2022 -- Feb. 2025. <b>Research Intern</b> in <a href="https://www.jingdonglogistics.com" target="_blank">JD Logistics</a><br><br>
+						<b>Project: Heterogeneous Graph-based Customer Expansion </b>
+					    <p>
+					      Over the past three years, I served as one of the <strong>leading contributors</strong> to the Customer Expansion project at JD Logistics. 
+					      We successfully unlocked the value of over <strong>10 billion logistics records</strong> by constructing a <strong>billion-scale heterogeneous graph</strong>, 
+					      ultimately improving the customer acquisition success rate by nearly <strong>192%</strong> and bringing in over <strong>ten million new orders</strong> in the past year.
+					    </p>
+
+					    <h4>Background: Limitations of JD’s Original System</h4>
+					    <ul>
+					    	Customer expansion aims to seek high-value customers willing to sign long-term contracts with our logistics company to ensure stable revenue streams.
+							However, the existing system in JD faced several limitations:
+					      <li>Relied heavily on manually crafted rules to identify target customers.</li>
+					      <li>Focused only on customer profiles, ignoring the rich interaction signals between customers and other entities (e.g., companies, logistics stations, other customers).</li>
+					    </ul>
+
+					    <h4>Our Approach</h4>
+					    <p>
+					      We proposed constructing a heterogeneous graph to capture relationships between these entities and leverage Heterogeneous Graph Neural Networks (HGNNs) for target customer identification. However, this approach posed significant challenges.
+					    </p>
+
+					    <h4>Challenges & Solutions</h4>
+					    <ul>
+					      <li>
+					        <b>Large-Scale, Noisy, and Fragmented Data:</b> Incorporating cross-entity relations expanded the data to over 10 billion records across hundreds of fragmented Spark tables.<br>
+					        <span style="color:#16a085;">Solution:</span> unify IDs, reduce noise, and align features, enabling construction of a billion-scale heterogeneous graph.
+					      </li>
+					      <li>
+					        <b>Extremely Sparse Positive Labels:</b> Only <0.07% of customers are signed, making it difficult for HGNNs to learn meaningful patterns. Even multi-task learning still struggle to improve performance.<br>
+					        <span style="color:#16a085;">Solution:</span> <em>KDD’25 - Hierarchical Structure Sharing Empowers Multi-task Heterogeneous GNNs for Customer Expansion </em>
+					      </li>
+					      <li>
+					        <b>Training on Billion-Scale Graphs:</b> It was computationally infeasible to use all neighboring interactions during HGNN training. Existing current sub-sampling methods reduce computational load by sampling a small part of neighborhood for training, but we find they suffer from substantial information loss.<br>
+					        <span style="color:#16a085;">Solution:</span> <em>arXiv’25 - NeighSqueeze: Compact Neighborhood Grouping for Efficient Billion-Scale Heterogeneous Graph Learning</em>
+					      </li>
+					      <li>
+					        <b>Missing Relations Between Entities:</b> The presence of some links (e.g., customer–company) significantly boosts prediction performance, but such links are missing for most customers.<br>
+					        <span style="color:#16a085;">Solution:</span> <em>KDD’24 - Paths2pair: Meta-path based link prediction in billion-scale commercial heterogeneous graphs (KDD’24)</em>
+					      </li>
+					      <li>
+					        <b>Modeling Complex Relationships:</b> Existing HGNNs rely on linear meta-paths, which are insufficient to model complex, non-linear relations between entities.<br>
+					        <span style="color:#16a085;">Solution:</span> <em>VLDB’24 - Complex-Path: Effective and Efficient Node Ranking with Paths in Billion-Scale Heterogeneous Graphs </em>
+					      </li>
+					    </ul>
+
+					    <h4>Result</h4>
+					    <p>
+					      After addressing these challenges, we developed an effective customer prediction framework based on the billion-scale heterogeneous. 
+					      The framework has been deployed for over six months, improving acquisition success rate by <strong>192%</strong> 
+					      and driving over <strong>ten million new orders</strong>.
+					    </p>
+
+
+					  <br><br>
 					</li>
+
 					<li>
 						Sep. 2021 -- Mar. 2022. <b>Research Intern</b> in <b>Microsoft Research Asia (MSRA)</b>, Beijing, China<br>
 						Advisor: <a href="https://scholar.google.com/citations?hl=zh-TW&user=NrOA9QoAAAAJ" target="_blank">Dr. Hao Wang</a> and <a href="https://scholar.google.com/citations?hl=zh-TW&user=WCyvEJsAAAAJ" target="_blank">Dr. Yun Wang </a><br>
