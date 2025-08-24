@@ -66,7 +66,7 @@
 						<div align="left">
 							<p>
 							I am currently working toward the PhD degree and supervised by Prof. Desheng Zhang in the Department of Computer Science, Rutgers University. <p>
-							<p>My research interests lie in Graph Neural Networks (GNNs) and Large Language Models (LLMs), with a strong background in real-world industrial applications. My work focuses on bridging advanced research and Scalable&Complex real-world deployment. I have extensive experience collaborating with industry partners, driving practical solutions from prototypes to production..<p>
+							<p>My research interests lie in Graph Neural Networks (GNNs) and Large Language Models (LLMs), with a strong background in real-world industrial applications. My work focuses on bridging advanced research with Scalable&Complex real-world deployment. I have extensive experience collaborating with industry partners, driving practical solutions from prototypes to production.<p>
 							<!-- <a href="https://cs.nju.edu.cn/lwj/" target="_blank">Prof. Wu-Jun Li</a> -->
 							<!--<p>I am a year-4 Ph.D. student supervised by <a href="http://www.comp.hkbu.edu.hk/~lichen/" target="_blank">Dr. Li Chen</a> at the <a href="https://www.comp.hkbu.edu.hk/" target="_blank">Department of Computer Science</a>, <a href="http://www.hkbu.edu.hk/" target="_blank">Hong Kong Baptist University</a>. Besides my supervisor, I am so fortunate to have the opportunity of discussing research problems with <a href="http://yongfeng.me/" target="_blank">Dr. Yongfeng Zhang</a> and <a href="https://people.ucd.ie/ruihai.dong" target="_blank">Dr. Ruihai Dong</a>. Under their guidance, I have been studying the topic of explainable recommendation (or more broadly explainable artificial intelligence).</p>
 							<p>Previously, I received my double bachelor's degrees in computer science and mathematics with the outstanding graduate honor from a special program of the <a href="http://csse.szu.edu.cn/en/index.html" target="_blank">College of Computer Science and Software Engineering</a>, <a href="https://en.szu.edu.cn/" target="_blank">Shenzhen University</a>, where I systematically studied recommender systems and information retrieval, under the supervision of <a href="http://csse.szu.edu.cn/staff/panwk/" target="_blank">Dr. Weike Pan</a>.</p>-->
@@ -119,7 +119,7 @@
 					<li>
 						<b>Xinyue Feng</b>, Shuxin Zhong<sup>(<i class="far fa-envelope"></i>)</sup>, Jinquan Hang, Yuequn Zhang, Guang Yang, Haotian Wang, Desheng Zhang, Guang Wang.<br>
 						<b>NeighSqueeze: Compact Neighborhood Grouping for Efficient Billion-Scale Heterogeneous Graph Learning</b>.
-						The 34th ACM International Conference on Information and Knowledge Management (CIKM'2025) 2025.8.<br>
+						The 34th ACM International Conference on Information and Knowledge Management <b>(CIKM'25)</b> <br>
 						[<a href="files/CIKM_paper.pdf" target="_blank">Paper</a>]
 						<br><br>
 					</li>
@@ -219,8 +219,8 @@
 				<ul>
 					<li>
 						Apr. 2025 -- Present. <b>Research Intern</b> in <a href="https://www.jingdonglogistics.com" target="_blank">JD Logistics</a> <br>
-						<b>Project: Heterogeneous Graph-based Customer Expansion </b><br>
-						After getting the high-value customer list generated from the customer expansion model, Sales will aim to contact logistics customers to gather their information,  discover their logistics demands, and promote our logistics services. However, human sales are always High cost, low efficiency, making it  necessary to propose a LLM-based Sales System.
+						<b>Project: A Multi-Agent LLM system for Phone-Based AI Sales </b><br>
+						After getting the high-value customer list generated from the customer expansion model, Sales will contact logistics customers to gather their information, discover their logistics demands, and promote our logistics services. However, human sales are always high cost, low efficiency, making it necessary to propose a LLM-based Sales System.
 						<br><br>
 					</li>
 					<li>
@@ -248,32 +248,31 @@
 					    <h4>Challenges & Solutions</h4>
 					    <ul>
 					      <li>
-					        <b>Large-Scale, Noisy, and Fragmented Data:</b> Incorporating cross-entity relations expanded the data to over 10 billion records across hundreds of fragmented Spark tables.<br>
-					        <span style="color:#16a085;">Solution:</span> Scalable pipeline for cleaning and aligning data, enabling construction of a billion-scale heterogeneous graph.
+					        <b>Billion-Scale, Noisy, and Fragmented Data:</b> Incorporating cross-entity relations expanded the data to over 10 billion records across hundreds of fragmented Spark tables.<br>
+					        <span style="color:#16a085;">Solution:</span> Build scalable pyspark pipeline for efficient data cleaning and alighment, enabling construction of a billion-scale heterogeneous graph.
 					      </li>
 					      <li>
-					        <b>Extremely Sparse Positive Labels:</b> Only <0.07% of customers are signed, making it difficult for HGNNs to learn meaningful patterns. Even multi-task learning still struggle to improve performance.<br>
+					        <b>Extreme Sparse Positive Labels:</b> Only <0.07% of customers are signed, making it difficult for HGNNs to learn meaningful patterns. Even multi-task learning still struggle to improve performance.<br>
 					        <span style="color:#16a085;">Solution:</span> <em>KDD’25 - Hierarchical Structure Sharing Empowers Multi-task Heterogeneous GNNs for Customer Expansion </em>[<a href="https://dl.acm.org/doi/10.1145/3711896.3737234" target="_blank">Paper</a>]
 					      </li>
 					      <li>
-					        <b>Training on Billion-Scale Graphs:</b> It was computationally infeasible to use all neighboring interactions during HGNN training. Existing current sub-sampling methods reduce computational load by sampling a small part of neighborhood for training, but we find they suffer from substantial information loss.<br>
-					        <span style="color:#16a085;">Solution:</span> <em>arXiv’25 - NeighSqueeze: Compact Neighborhood Grouping for Efficient Billion-Scale Heterogeneous Graph Learning</em>[<a href="files/CIKM_paper.pdf" target="_blank">Paper</a>]
+					        <b>Low efficiency and Information-Loss in Billion-Scale Graphs Training:</b> Use all neighboring interactions during HGNN training is computationally infeasible. Though existing sub-sampling methods reduce computational load by sampling a small part of neighborhood for training, we find they suffer from substantial information loss.<br>
+					        <span style="color:#16a085;">Solution:</span> <em>CIKM’25 - NeighSqueeze: Compact Neighborhood Grouping for Efficient Billion-Scale Heterogeneous Graph Learning</em>[<a href="files/CIKM_paper.pdf" target="_blank">Paper</a>]
 					      </li>
 					      <li>
-					        <b>Missing Relations Between Entities:</b> The presence of some links (e.g., customer–company) significantly boosts prediction performance, but such links are missing for most customers.<br>
+					        <b>Missing High-Impact Relations:</b> The presence of some links (e.g., customer–company) significantly boosts prediction performance, but such links are missing for most customers.<br>
 					        <span style="color:#16a085;">Solution:</span> <em>KDD’24 - Paths2pair: Meta-path based link prediction in billion-scale commercial heterogeneous graphs</em>[<a href="https://dl.acm.org/doi/10.1145/3637528.3671563" target="_blank">Paper</a>]
 					      </li>
 					      <li>
-					        <b>Modeling Complex Relationships:</b> Existing HGNNs rely on linear meta-paths, which are insufficient to model complex, non-linear relations between entities.<br>
+					        <b>Complex Relationships Modeling:</b> Existing HGNNs rely on linear meta-paths, which are insufficient to model complex, non-linear relations between entities.<br>
 					        <span style="color:#16a085;">Solution:</span> <em>VLDB’24 - Complex-Path: Effective and Efficient Node Ranking with Paths in Billion-Scale Heterogeneous Graphs </em>[<a href="https://www.vldb.org/pvldb/vol17/p3973-hang.pdf" target="_blank">Paper</a>]
 					      </li>
 					    </ul>
 
-					    <h4>Result</h4>
+					    <h4>Real-World Impact</h4>
 					    <p>
-					      After addressing these challenges, we developed an effective customer prediction framework based on the billion-scale heterogeneous. 
-					      The framework has been deployed for over six months, improving acquisition success rate by <strong>192%</strong> 
-					      and driving over <strong>ten million new orders</strong>.
+					      We addressed these challenges and  developed an effective customer prediction framework based on the billion-scale heterogeneous. 
+					      The framework has been deployed in JD Logistics for over six months, improving acquisition success rate by <strong>192%</strong>  and driving over <strong>ten million new orders</strong>.
 					    </p>
 
 
@@ -282,11 +281,19 @@
 
 					<li>
 						Sep. 2021 -- Mar. 2022. <b>Research Intern</b> in <b>Microsoft Research Asia (MSRA)</b>, Beijing, China<br>
-						Advisor: <a href="https://scholar.google.com/citations?hl=zh-TW&user=NrOA9QoAAAAJ" target="_blank">Dr. Hao Wang</a> and <a href="https://scholar.google.com/citations?hl=zh-TW&user=WCyvEJsAAAAJ" target="_blank">Dr. Yun Wang </a><br>
+						Advisor: Dr. Hao Wang and Dr. Yun Wang <br>
 						Project: <b>A Hierarchical Unsupervised Framework for Hand-drawn Diagrams Recognition</b>
 						<br><br>
 					</li>
 
+
+					<!-- <li>
+						Sep. 2021 -- Mar. 2022. <b>Research Intern</b> in <b>Microsoft Research Asia (MSRA)</b>, Beijing, China<br>
+						Advisor: <a href="https://scholar.google.com/citations?hl=zh-TW&user=NrOA9QoAAAAJ" target="_blank">Dr. Hao Wang</a> and <a href="https://scholar.google.com/citations?hl=zh-TW&user=WCyvEJsAAAAJ" target="_blank">Dr. Yun Wang </a><br>
+						Project: <b>A Hierarchical Unsupervised Framework for Hand-drawn Diagrams Recognition</b>
+						<br><br>
+					</li>
+ -->
 				</ul>
 			</div>
 		</article>
